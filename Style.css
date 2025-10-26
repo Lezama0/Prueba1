@@ -1,44 +1,44 @@
-/* Reseteo bÃ¡sico y tipografÃ­a */
+/* Reseteo básico y tipografía */
 :root {
-    --primary-color: #000000; /* Un color de acento azul */
-    --text-color-dark: hsl(202, 100%, 29%);
-    --text-color-light: #000000;
-    --background-color: #dbe9e5;
-    --border-radius-circle: 50%;
+    --primary-color: #000000; /* Un color de acento azul */  
+    --text-color-dark: hsl(202, 100%, 29%); /* Azul oscuro ✓ */
+    --text-color-light: #000000; /*  También negro, debería ser gris claro */
+    --background-color: #dbe9e5; /* Verde-agua suave ✓ */
+    --border-radius-circle: 50%; /* Para imágenes circulares ✓ */
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* ✓ Reset universal, buena práctica */
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color-dark);
-    line-height: 1.6;
-    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* ✓ Fuentes del sistema */
+    background-color: var(--background-color); /* Fondo verde-agua */
+    color: var(--text-color-dark); /* Texto azul oscuro */
+    line-height: 1.6; /* ✓ Buen espaciado de líneas */
+    min-height: 100vh; /* ✓ Ocupa toda la altura de la ventana */
     display: flex;
-    flex-direction: column; /* Permite que el footer se quede abajo */
+    flex-direction: column; /* ✓ Para que el footer quede abajo */
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none; /* Quita subrayado de enlaces */
+    color: inherit; /* Hereda color del padre */
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Quita bullets de listas */
 }
 
-/* 1. Barra de NavegaciÃ³n (Navbar) */
+/* 1. Barra de Navegación (Navbar) */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo a la izq, nav centro, foto derecha */
     align-items: center;
-    padding: 20px 80px; /* Buen padding para los bordes */
-    position: absolute; /* Para que quede encima de la pÃ¡gina */
+    padding: 20px 80px;
+    position: absolute; /*  Flota sobre el contenido, puede causar superposición */
     top: 0;
     left: 0;
     width: 100%;
@@ -48,18 +48,18 @@ ul {
     display: flex;
     align-items: center;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 600; /* Texto semi-bold */
 }
 
 .logo-icon {
     width: 20px;
     height: 20px;
-    margin-right: 8px;
+    margin-right: 8px; /* Separación entre ícono y texto */
 }
 
 .nav-links ul {
     display: flex;
-    gap: 30px;
+    gap: 30px; /* Espacio entre enlaces */
     font-size: 16px;
     font-weight: 500;
 }
@@ -67,92 +67,92 @@ ul {
 .nav-profile-thumb {
     width: 35px;
     height: 35px;
-    border-radius: var(--border-radius-circle);
-    object-fit: cover;
+    border-radius: var(--border-radius-circle); /* Imagen circular */
+    object-fit: cover; /* ✓ Evita distorsión */
 }
 
-/* 2. SecciÃ³n Hero */
+/* 2. Sección Hero */
 .hero-section {
-    flex-grow: 1; /* Hace que ocupe el espacio restante */
+    flex-grow: 1; /* ✓ Ocupa todo el espacio vertical disponible */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 100px; /* Para evitar que el contenido se superponga con la navbar */
+    padding-top: 100px; /* ✓ Compensa la navbar absoluta */
 }
 
 .hero-container {
     display: flex;
-    align-items: flex-start; /* AlineaciÃ³n superior de los elementos */
-    width: 80%; /* Ancho de la secciÃ³n principal */
-    max-width: 1200px;
-    gap: 100px;
+    align-items: flex-start; /* Alinea arriba (foto y texto al mismo nivel) */
+    width: 80%;
+    max-width: 1200px; /* ✓ Limita ancho máximo */
+    gap: 100px; /* Gran separación entre columnas */
     padding: 40px;
 }
 
 .hero-left {
-    flex: 1; /* Ocupa 1 parte del espacio */
+    flex: 1; /* Ocupa 1/3 del espacio */
     display: flex;
-    justify-content: flex-end; /* Alinea la tarjeta a la derecha de su contenedor */
+    justify-content: flex-end; /* Empuja la tarjeta hacia la derecha */
     padding-right: 50px;
 }
 
 .profile-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Foto arriba, texto abajo */
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 250px; /* Ancho mÃ¡ximo para la tarjeta de perfil */
+    max-width: 250px;
 }
 
 .profile-image {
     width: 150px;
     height: 150px;
-    border-radius: var(--border-radius-circle);
+    border-radius: var(--border-radius-circle); /* Circular */
     object-fit: cover;
     margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* ✓ Sombra suave */
 }
 
 .profile-details h1 {
     font-size: 32px;
     margin-bottom: 5px;
-    font-weight: 700;
+    font-weight: 700; /* Bold */
 }
 
 .profile-details .role {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Negro (debería ser azul) */
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 5px;
 }
 
 .profile-details .location {
-    color: var(--text-color-light);
+    color: var(--text-color-light); /* Negro (debería ser gris) */
     font-size: 14px;
 }
 
 .hero-right {
-    flex: 2; /* Ocupa 2 partes del espacio (mÃ¡s ancho) */
-    padding-top: 30px; /* Ajuste para alinear visualmente con la imagen */
+    flex: 2; /* ✓ Ocupa 2/3 del espacio (doble que .hero-left) */
+    padding-top: 30px;
 }
 
 .bio-text {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.8; /* ✓ Espaciado generoso para lectura */
     color: var(--text-color-light);
-    max-width: 600px;
+    max-width: 600px; /* ✓ Limita ancho de línea para mejor lectura */
 }
 
 .bio-text strong {
     font-weight: 600;
-    color: var(--text-color-dark);
+    color: var(--text-color-dark); /* Resalta en azul oscuro */
 }
 
-/* 3. Pie de pÃ¡gina (Footer) */
+/* 3. Pie de página (Footer) */
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Copyright izq, iconos derecha */
     align-items: center;
     padding: 20px 80px;
     font-size: 14px;
@@ -163,18 +163,18 @@ ul {
     width: 20px;
     height: 20px;
     margin-left: 15px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    opacity: 0.7; /* ✓ Semi-transparentes */
+    transition: opacity 0.2s; /* ✓ Animación suave */
 }
 
 .social-links img:hover {
-    opacity: 1;
+    opacity: 1; /* ✓ Totalmente visibles al pasar el mouse */
 }
 
 /* Media Queries (para hacerlo responsive) */
-@media (max-width: 900px) {
+@media (max-width: 900px) { /* ✓ En pantallas menores a 900px */
     .hero-container {
-        flex-direction: column;
+        flex-direction: column; /* Cambia de horizontal a vertical */
         align-items: center;
         text-align: center;
         gap: 50px;
@@ -187,11 +187,11 @@ ul {
     }
 
     .navbar {
-        padding: 20px 40px;
+        padding: 20px 40px; /* Reduce padding en móviles */
     }
     
     .footer {
-        flex-direction: column;
+        flex-direction: column; /* Apila copyright e iconos */
         gap: 10px;
         padding: 20px 40px;
     }
